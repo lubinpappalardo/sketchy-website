@@ -33,6 +33,10 @@ body {
     justify-content: center;
     align-items: center;
 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
     .button {
         position: absolute;
         width: 100%;
@@ -111,14 +115,28 @@ body {
     }
 }
 
-.button-container:hover {
-
-    .button {
-        top: 0%;
-        left: 0%;
-    }
-
-    .button-shadow {
-        opacity: 0;
-    }
+@media only screen and (max-width: 767px) {
+    .button-container:active {
+        .button {
+            top: 0%;
+            left: 0%;
+        }
+    
+        .button-shadow {
+            opacity: 0;
+        }
+    }   
 }
+@media screen and (min-width: 768px){
+    .button-container:hover {
+        .button {
+            top: 0%;
+            left: 0%;
+        }
+    
+        .button-shadow {
+            opacity: 0;
+        }
+    } 
+}
+
