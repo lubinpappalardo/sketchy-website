@@ -32,7 +32,7 @@ buttonContainer.addEventListener('click', () => {
     // Create two new image elements
     const img1 = document.createElement('img');
     img1.className = 'highlight-star big-star';
-    img1.src = 'highlight_star_big.svg';
+    img1.src = 'sketch-big-star.png';
     img1.alt = 'big highlight star';
     img1.draggable = false;
     const randomPlacementModified = addRandomness(randomPlacement);
@@ -41,7 +41,7 @@ buttonContainer.addEventListener('click', () => {
 
     const img2 = document.createElement('img');
     img2.className = 'highlight-star small-star';
-    img2.src = 'highlight_star_small.svg';
+    img2.src = 'sketch-small-star.png';
     img2.alt = 'big highlight small';
     img2.draggable = false;
     const oppositePlacementModified = addRandomness(oppositePlacement);
