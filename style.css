@@ -62,9 +62,9 @@ body {
         cursor: url('sketch-cursor-1.png') 0 0, auto;
 
         img {
-            position: absolute;
-            width: 50%;
-            top: 20%;
+            /* position: absolute; */
+            width: 55%;
+            /* top: 25%; */
             mix-blend-mode: multiply;
 
             cursor: url('sketch-cursor-1.png') 0 0, auto;
