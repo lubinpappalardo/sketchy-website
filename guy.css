@@ -1,0 +1,25 @@
+#guy {
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10vw;
+    min-width: 200px;
+}
+
+#guy-head {
+    transform-origin: bottom center;
+    transition-duration: 1s;
+    width: 50%;
+}
+
+#guy.tilt-head #guy-head {
+    transform: rotate(20deg);
+}
+
+#guy-body {
+    width: 50%;
+}
