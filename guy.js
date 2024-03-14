@@ -8,12 +8,12 @@ buttonContainer.addEventListener('click', () => {
         return;
     }
     
-    document.getElementById("guy").classList = "tilt-head";
+    document.getElementById("guy").classList = "wave";
     inAnimation = true;
 
     setTimeout(() => {
         document.getElementById("guy").classList = "";
         inAnimation = false;
-    }, 2000);
+    }, 1100);
 
 });
