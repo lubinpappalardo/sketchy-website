@@ -9,23 +9,47 @@
 <body>
 
     <div id='guy-controller'>
+        <label for="all">All: <span id="all-value">0deg</span></label>
+        <input type="range" title="all" min="-90" max="90" step="1" id='guy-all-control'>
+        
         <label for="neck">Neck: <span id="neck-value">0deg</span></label>
         <input type="range" title="neck" min="-60" max="60" step="1" id='guy-head-control'>
+
         <label for="left-shoulder">Left Shoulder: <span id="left-shoulder-value">0deg</span></label>
         <input type="range" title="left-shoulder" min="-180" max="180" step="1" id='guy-left-shoulder-control'>
+
         <label for="left-elbow">Left Elbow: <span id="left-elbow-value">0deg</span></label>
         <input type="range" title="left-elbow" min="-180" max="180" step="1" id='guy-left-elbow-control'>
+
         <label for="left-wrist">Left Wrist: <span id="left-wrist-value">0deg</span></label>
         <input type="range" title="left-wrist" min="-45" max="45" step="1" id='guy-left-wrist-control'>
+
         <label for="right-shoulder">Right Shoulder: <span id="right-shoulder-value">0deg</span></label>
         <input type="range" title="right-shoulder" min="-180" max="180" step="1" id='guy-right-shoulder-control'>
+
         <label for="right-elbow">Right Elbow: <span id="right-elbow-value">0deg</span></label>
         <input type="range" title="right-elbow" min="-180" max="180" step="1" id='guy-right-elbow-control'>
+
         <label for="right-wrist">Right Wrist: <span id="right-wrist-value">0deg</span></label>
         <input type="range" title="right-wrist" min="-45" max="45" step="1" id='guy-right-wrist-control'>
+
         <label for="upper-body">Upper body: <span id="upper-body-value">0deg</span></label>
         <input type="range" title="upper-body" min="-45" max="45" step="1" id='guy-upper-body-control'>
+
+        <label for="left-leg">Left leg: <span id='left-leg-value'>0deg</span></label>
+        <input type="range" title="left-leg" min="-45" max="45" step="1" id='guy-left-leg-control'>
+
+        <label for="right-leg">Right leg: <span id='right-leg-value'>0deg</span></label>
+        <input type="range" title="right-leg" min="-45" max="45" step="1" id='guy-right-leg-control'>
+
+        <label for="left-knee">Left knee: <span id="left-knee-value">0deg</span></label>
+        <input type="range" title="left-knee" min="-45" max="45" step="1" id='guy-left-knee-control'>
+
+        <label for="right-knee">Right knee: <span id="right-knee-value">0deg</span></label>
+        <input type="range" title="right-knee" min="-45" max="45" step="1" id='guy-right-knee-control'>
         
+        <label for="show-bounding-boxes">Show bounding boxes:</label>
+        <input title="show-bounding-boxes" id="guy-show-bounding-boxes" type="checkbox" value="bounding-boxes">
         <label for="reset-controls">Reset:</label>
         <button id="reset-controls">Reset</button>
     </div>
@@ -47,6 +71,16 @@
                     <img id='guy-right-lower-arm' src="graphics/guy/guy-right-lower-arm.png" alt="Guy" draggable="false">
                     <img id='guy-right-hand' src="graphics/guy/guy-right-hand.png" alt="Guy" draggable="false">
                 </div>
+            </div>
+        </div>
+        <div id="guy-lower-body-group">
+            <div id="guy-left-leg">
+                <img id='guy-left-upper-leg' src="graphics/guy/guy-left-upper-leg.png" alt="Guy" draggable="false">
+                <img id='guy-left-lower-leg' src="graphics/guy/guy-left-lower-leg.png" alt="Guy" draggable="false">
+            </div>
+            <div id="guy-right-leg">
+                <img id='guy-right-upper-leg' src="graphics/guy/guy-right-upper-leg.png" alt="Guy" draggable="false">
+                <img id='guy-right-lower-leg' src="graphics/guy/guy-right-lower-leg.png" alt="Guy" draggable="false">
             </div>
         </div>
     </div>  

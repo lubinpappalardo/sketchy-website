@@ -31,3 +31,7 @@ body {
     position: absolute;
     left: 40px;
 }
+
+#guy.show-bounding-boxes, #guy.show-bounding-boxes * {
+    border: 1px solid hsl(0, 0%, 80%);
+}
