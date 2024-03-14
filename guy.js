@@ -13,7 +13,13 @@ buttonContainer.addEventListener('click', () => {
 
     setTimeout(() => {
         document.getElementById("guy").classList = "";
-        inAnimation = false;
-    }, 1100);
+        
+        setTimeout(() => {
+            inAnimation = false;
+        }, 1000);
+
+    }, 1000);
+
+
 
 });
