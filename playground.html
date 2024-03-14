@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchy Website</title>
+    <link rel="stylesheet" href="playground.css">
+</head>
+<body>
+
+    <div id='guy-controller'>
+        <label for="neck">Neck: <span id="neck-value">0deg</span></label>
+        <input type="range" title="neck" min="-60" max="60" step="1" id='guy-head-control'>
+        <label for="left-shoulder">Left Shoulder: <span id="left-shoulder-value">0deg</span></label>
+        <input type="range" title="left-shoulder" min="-180" max="180" step="1" id='guy-left-shoulder-control'>
+        <label for="left-elbow">Left Elbow: <span id="left-elbow-value">0deg</span></label>
+        <input type="range" title="left-elbow" min="-180" max="180" step="1" id='guy-left-elbow-control'>
+        <label for="left-wrist">Left Wrist: <span id="left-wrist-value">0deg</span></label>
+        <input type="range" title="left-wrist" min="-45" max="45" step="1" id='guy-left-wrist-control'>
+        <label for="right-shoulder">Right Shoulder: <span id="right-shoulder-value">0deg</span></label>
+        <input type="range" title="right-shoulder" min="-180" max="180" step="1" id='guy-right-shoulder-control'>
+        <label for="right-elbow">Right Elbow: <span id="right-elbow-value">0deg</span></label>
+        <input type="range" title="right-elbow" min="-180" max="180" step="1" id='guy-right-elbow-control'>
+        <label for="right-wrist">Right Wrist: <span id="right-wrist-value">0deg</span></label>
+        <input type="range" title="right-wrist" min="-45" max="45" step="1" id='guy-right-wrist-control'>
+        <label for="upper-body">Upper body: <span id="upper-body-value">0deg</span></label>
+        <input type="range" title="upper-body" min="-45" max="45" step="1" id='guy-upper-body-control'>
+        
+        <label for="reset-controls">Reset:</label>
+        <button id="reset-controls">Reset</button>
+    </div>
+
+    <div id='guy'>
+        <div id="guy-upper-body-group">
+            <img id="guy-head" src="graphics/guy/guy-head.png" alt="Guy" draggable="false">
+            <img id="guy-body" src="graphics/guy/guy-body.png" alt="Guy" draggable="false">
+            <div id="guy-left-arm">
+                <img id='guy-left-upper-arm' src="graphics/guy/guy-left-upper-arm.png" alt="Guy" draggable="false">
+                <div id="guy-left-lower-arm-group">
+                    <img id='guy-left-lower-arm' src="graphics/guy/guy-left-lower-arm.png" alt="Guy" draggable="false">
+                    <img id='guy-left-hand' src="graphics/guy/guy-left-hand.png" alt="Guy" draggable="false">
+                </div>
+            </div>
+            <div id="guy-right-arm">
+                <img id='guy-right-upper-arm' src="graphics/guy/guy-right-upper-arm.png" alt="Guy" draggable="false">
+                <div id="guy-right-lower-arm-group">
+                    <img id='guy-right-lower-arm' src="graphics/guy/guy-right-lower-arm.png" alt="Guy" draggable="false">
+                    <img id='guy-right-hand' src="graphics/guy/guy-right-hand.png" alt="Guy" draggable="false">
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <script src="playground.js"></script>
+</body>
+</html>

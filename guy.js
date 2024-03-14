@@ -1,3 +1,4 @@
+const guy = document.getElementById("guy");
 let inAnimation = false;
 
 
@@ -8,18 +9,12 @@ buttonContainer.addEventListener('click', () => {
         return;
     }
     
-    document.getElementById("guy").classList = "wave";
+    guy.classList = "wave";
     inAnimation = true;
 
-    setTimeout(() => {
+    guy.addEventListener('animationend', () => {
         document.getElementById("guy").classList = "";
-        
-        setTimeout(() => {
-            inAnimation = false;
-        }, 1000);
-
-    }, 1000);
-
-
+        inAnimation = false;
+    });
 
 });

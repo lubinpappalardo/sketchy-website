@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Human Pose Detection</title>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@hyuto/yolov8-tfjs"></script>
+</head>
+<body>
+  <video id="video" width="640" height="480" autoplay></video>
+  <canvas id="canvas"></canvas>
+  <script>
+    const video = document.getElementById("video");
+    const canvas = document.getElementById("canvas");
+    canvas.width = 640;
+    canvas.height = 480;
+    const ctx = canvas.getContext("2d");
+
+    async function setupCamera() {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+      });
+      video.srcObject = stream;
+    }
+
+    async function detectPose() {
+      const model = await YOLOV8.load("yolov8n-pose.tfjsmodel");
+      const poses = await model.detect(video);
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      poses.forEach((pose) => {
+        drawKeypoints(pose.keypoints, ctx);
+      });
+      requestAnimationFrame(detectPose);
+    }
+
+    function drawKeypoints(keypoints, ctx) {
+      ctx.fillStyle = "green";
+      keypoints.forEach(({ x, y }) => {
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, 2 * Math.PI);
+        ctx.fill();
+      });
+    }
+
+    setupCamera().then(detectPose);
+  </script>
+</body>
+</html>
