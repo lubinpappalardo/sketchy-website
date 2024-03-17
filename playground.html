@@ -37,16 +37,22 @@
         <input type="range" title="upper-body" min="-45" max="45" step="1" id='guy-upper-body-control'>
 
         <label for="left-leg">Left leg: <span id='left-leg-value'>0deg</span></label>
-        <input type="range" title="left-leg" min="-45" max="45" step="1" id='guy-left-leg-control'>
+        <input type="range" title="left-leg" min="-90" max="90" step="1" id='guy-left-leg-control'>
 
         <label for="right-leg">Right leg: <span id='right-leg-value'>0deg</span></label>
-        <input type="range" title="right-leg" min="-45" max="45" step="1" id='guy-right-leg-control'>
+        <input type="range" title="right-leg" min="-90" max="90" step="1" id='guy-right-leg-control'>
 
         <label for="left-knee">Left knee: <span id="left-knee-value">0deg</span></label>
-        <input type="range" title="left-knee" min="-45" max="45" step="1" id='guy-left-knee-control'>
+        <input type="range" title="left-knee" min="-65" max="45" step="1" id='guy-left-knee-control'>
 
         <label for="right-knee">Right knee: <span id="right-knee-value">0deg</span></label>
-        <input type="range" title="right-knee" min="-45" max="45" step="1" id='guy-right-knee-control'>
+        <input type="range" title="right-knee" min="-80" max="20" step="1" id='guy-right-knee-control'>
+
+        <label for="left-ankle">Left ankle: <span id="left-ankle-value">0deg</span></label>
+        <input type="range" title="left-ankle" min="-45" max="20" step="1" id='guy-left-ankle-control'>
+
+        <label for="right-ankle">Right ankle: <span id="right-ankle-value">0deg</span></label>
+        <input type="range" title="right-ankle" min="-45" max="20" step="1" id='guy-right-ankle-control'>
         
         <label for="show-bounding-boxes">Show bounding boxes:</label>
         <input title="show-bounding-boxes" id="guy-show-bounding-boxes" type="checkbox" value="bounding-boxes">
@@ -77,15 +83,22 @@
             <div id="guy-lower-body-group">
                 <div id="guy-left-leg">
                     <img id='guy-left-upper-leg' src="graphics/guy/guy-left-upper-leg.png" alt="Guy" draggable="false">
-                    <img id='guy-left-lower-leg' src="graphics/guy/guy-left-lower-leg.png" alt="Guy" draggable="false">
+                    <div id="guy-left-lower-leg-group">
+                        <img id='guy-left-lower-leg' src="graphics/guy/guy-left-lower-leg.png" alt="Guy" draggable="false">
+                        <img id='guy-left-shoe' src="graphics/guy/guy-left-shoe.png" alt="Guy" draggable="false">
+                    </div>
+                    
                 </div>
                 <div id="guy-right-leg">
                     <img id='guy-right-upper-leg' src="graphics/guy/guy-right-upper-leg.png" alt="Guy" draggable="false">
-                    <img id='guy-right-lower-leg' src="graphics/guy/guy-right-lower-leg.png" alt="Guy" draggable="false">
+                    <div id="guy-right-lower-leg-group">
+                        <img id='guy-right-lower-leg' src="graphics/guy/guy-right-lower-leg.png" alt="Guy" draggable="false">
+                        <img id='guy-right-shoe' src="graphics/guy/guy-right-shoe.png" alt="Guy" draggable="false">
+                    </div>
                 </div>
             </div>
         </div>  
-    </div>
+    </div>  
 
     <script src="playground.js"></script>
 </body>

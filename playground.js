@@ -54,13 +54,23 @@ document.getElementById("guy-right-leg-control").addEventListener('input', (e) =
 });
 
 document.getElementById("guy-left-knee-control").addEventListener('input', (e) => {
-    document.getElementById("guy-left-lower-leg").style.transform = `rotate(${e.target.value}deg)`;
+    document.getElementById("guy-left-lower-leg-group").style.transform = `rotate(${e.target.value}deg)`;
     document.getElementById("left-knee-value").textContent = e.target.value + 'deg';
 });
 
 document.getElementById("guy-right-knee-control").addEventListener('input', (e) => {
-    document.getElementById("guy-right-lower-leg").style.transform = `rotate(${e.target.value}deg)`;
+    document.getElementById("guy-right-lower-leg-group").style.transform = `rotate(${e.target.value}deg)`;
     document.getElementById("right-knee-value").textContent = e.target.value + 'deg';
+});
+
+document.getElementById("guy-left-ankle-control").addEventListener('input', (e) => {
+    document.getElementById("guy-left-shoe").style.transform = `rotate(${e.target.value}deg)`;
+    document.getElementById("left-ankle-value").textContent = e.target.value + 'deg';
+});
+
+document.getElementById("guy-right-ankle-control").addEventListener('input', (e) => {
+    document.getElementById("guy-right-shoe").style.transform = `rotate(${e.target.value}deg)`;
+    document.getElementById("right-ankle-value").textContent = e.target.value + 'deg';
 });
 
 document.getElementById("reset-controls").addEventListener('click', () => {
@@ -109,12 +119,20 @@ document.getElementById("reset-controls").addEventListener('click', () => {
     document.getElementById("right-leg-value").textContent = 0 + 'deg';
     
     document.getElementById("guy-left-knee-control").value = 0;
-    document.getElementById("guy-left-lower-leg").style.transform = ``;
+    document.getElementById("guy-left-lower-leg-group").style.transform = ``;
     document.getElementById("left-knee-value").textContent = 0 + 'deg';
 
     document.getElementById("guy-right-knee-control").value = 0;
-    document.getElementById("guy-right-lower-leg").style.transform = ``;
+    document.getElementById("guy-right-lower-leg-group").style.transform = ``;
     document.getElementById("right-knee-value").textContent = 0 + 'deg';
+
+    document.getElementById("guy-left-ankle-control").value = 0;
+    document.getElementById("guy-left-shoe").style.transform = ``;
+    document.getElementById("left-ankle-value").textContent = 0 + 'deg';
+
+    document.getElementById("guy-right-ankle-control").value = 0;
+    document.getElementById("guy-right-shoe").style.transform = ``;
+    document.getElementById("right-ankle-value").textContent = 0 + 'deg';
 });
 
 document.getElementById("guy-show-bounding-boxes").addEventListener('click', () => {

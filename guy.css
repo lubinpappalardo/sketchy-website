@@ -6,7 +6,7 @@
     width: 10vw;
     min-width: 100px;
 
-    transform: translateY(-75%);
+    transform: translateY(-85%);
 }
 
 #guy {
@@ -16,7 +16,7 @@
     align-items: center;
     width: 100%;
 
-    --wave-duration: 1.5s;
+    --wave-duration: 2s;
     --wave-ease: ease-in-out;
 
     &, * {
@@ -155,15 +155,31 @@
             /* border: 1px solid hsl(0, 0%, 50%); */
         }
 
-        #guy-left-lower-leg {
-            /* display: none; */
+        #guy-left-lower-leg-group {
             position: absolute;
-            left: -4%;
+            display: flex;
+            justify-content: right;
             top: 91%;
+            left: -4%;
             width: 120%;
             /* border: 1px solid hsl(0, 0%, 50%); */
-
+    
             transform-origin: 20% 0%;
+
+            #guy-left-lower-leg {
+                width: 100%;
+                /* border: 1px solid hsl(0, 0%, 50%); */
+            }
+
+            #guy-left-shoe {
+                position: absolute;
+                top: 100%;
+                left: 30%;
+                width: 80%; 
+                /* border: 1px solid hsl(0, 0%, 50%); */
+
+                transform-origin: 70% 0%;
+            }
         }
 
     }
@@ -182,16 +198,33 @@
             /* border: 1px solid hsl(0, 0%, 50%); */
         }
 
-        #guy-right-lower-leg {
-            /* display: none; */
+        #guy-right-lower-leg-group {
             position: absolute;
+            display: flex;
+            justify-content: right;
+            top: 93%;
             left: 12.5%;
-            top: 94%;
             width: 83%;
             /* border: 1px solid hsl(0, 0%, 50%); */
-
+    
             transform-origin: 30% 0%;
+
+            #guy-right-lower-leg {
+                width: 100%;
+                /* border: 1px solid hsl(0, 0%, 50%); */
+            }
+
+            #guy-right-shoe {
+                position: absolute;
+                top: 100%;
+                right: 0%;
+                width: 120%; 
+                /* border: 1px solid hsl(0, 0%, 50%); */
+
+                transform-origin: 70% 0%;
+            }
         }
+
     }
 }
 
@@ -233,16 +266,24 @@
     #guy-left-leg {
         animation-name: wave-left-leg;
 
-        #guy-left-lower-leg {
-            animation-name: wave-left-lower-leg;
+        #guy-left-lower-leg-group {
+            animation-name: wave-left-lower-leg-group;
+
+            #guy-left-shoe {
+                animation-name: wave-left-shoe;
+            }
         }
     }
 
     #guy-right-leg {
         animation-name: wave-right-leg;
 
-        #guy-right-lower-leg {
-            animation-name: wave-right-lower-leg;
+        #guy-right-lower-leg-group {
+            animation-name: wave-right-lower-leg-group;
+
+            #guy-right-shoe {
+                animation-name: wave-right-shoe;
+            }
         }
     }
 }
@@ -267,19 +308,25 @@
 
 @keyframes wave-left-arm {
     0% { transform: rotate(0deg); }
-    50% { transform: rotate(140deg); }
+    25% { transform: rotate(140deg); }
+    50% { transform: rotate(90deg); }
+    75% { transform: rotate(140deg); }
     100% { transform: rotate(0deg); }
 }
 
 @keyframes wave-left-lower-arm-group {
     0% { transform: rotate(0deg); }
-    50% { transform: rotate(100deg); }
+    25% { transform: rotate(100deg); }
+    50% { transform: rotate(35deg); }
+    75% { transform: rotate(100deg); }
     100% { transform: rotate(0deg); }
 }
 
 @keyframes wave-left-hand {
     0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
     50% { transform: rotate(20deg); }
+    75% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
 }
 
@@ -313,14 +360,26 @@
     100% { transform: rotate(0deg); }
 }
 
-@keyframes wave-left-lower-leg {
+@keyframes wave-left-lower-leg-group {
     0% { transform: rotate(0deg); }
     50% { transform: rotate(25deg); }
     100% { transform: rotate(0deg); }
 }
 
-@keyframes wave-right-lower-leg {
+@keyframes wave-right-lower-leg-group {
     0% { transform: rotate(0deg); }
     50% { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes wave-left-shoe {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes wave-right-shoe {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
     100% { transform: rotate(0deg); }
 }
