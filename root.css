@@ -1,0 +1,9 @@
+:root {
+    --num-of-column: 6;
+    --column-width: calc(
+            ( 100vw - 
+                ( (var(--num-of-column) - 1) * 2vw ) 
+            )
+            / var(--num-of-column)
+        );
+}

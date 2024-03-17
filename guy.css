@@ -1,16 +1,20 @@
-#guy {
+#guy-container {
+    /* border: 1px solid red; */
     position: fixed;
-    bottom: 30vh;
-    right: 10%;
+    right: var(--column-width);
+    bottom: 0;
+    width: 10vw;
+    min-width: 100px;
+
+    transform: translateY(-75%);
+}
+
+#guy {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 10vw; */
-    /* min-width: 200px; */
-    width: 150px;
-
-    --translateYValue: 00%;
-    /* transform: translateY(var(--translateYValue)); */
+    width: 100%;
 
     --wave-duration: 1.5s;
     --wave-ease: ease-in-out;
@@ -244,9 +248,9 @@
 }
 
 @keyframes wave-all {
-    0% { transform: rotate(0deg) translateY(var(--translateYValue)); }
-    50% { transform: translateX(30%) rotate(13deg) translateY(var(--translateYValue)); }
-    100% { transform: rotate(0deg) translateY(var(--translateYValue)); }
+    0% { transform: rotate(0deg); }
+    50% { transform: translateX(30%) rotate(13deg); }
+    100% { transform: rotate(0deg); }
 }
 
 @keyframes wave-upper-body-group {
