@@ -1,7 +1,7 @@
 #guy-container {
     /* border: 1px solid red; */
     position: fixed;
-    right: var(--column-width);
+    right: calc(1 * var(--column-width));
     bottom: 0;
     width: 10vw;
     min-width: 100px;
@@ -19,6 +19,9 @@
     --wave-duration: 2s;
     --wave-ease: ease-in-out;
 
+    --walk-duration: 2s;
+    --walk-ease: linear;
+
     &, * {
         /* border: 1px solid hsl(0, 0%, 50%); */
     }
@@ -27,6 +30,12 @@
 #guy.wave, #guy.wave * {
     animation-duration: var(--wave-duration);
     animation-timing-function: var(--wave-ease);
+    animation-fill-mode: forwards;
+}
+
+#guy.walk, #guy.walk * {
+    animation-duration: var(--walk-duration);
+    animation-timing-function: var(--walk-ease);
 }
 
 #guy-upper-body-group {
@@ -383,3 +392,167 @@
     50% { transform: rotate(2deg); }
     100% { transform: rotate(0deg); }
 }
+
+
+/* ---- ---- ---- ----
+
+
+---- ---- ---- ---- */
+
+#guy.walk {
+    animation-name: walk-all;
+
+    #guy-upper-body-group {
+        animation-name: walk-upper-body-group;
+    }
+
+    #guy-head {
+        animation-name: walk-head;
+    }
+
+    #guy-left-arm {
+        z-index: -1;
+        animation-name: walk-left-arm;
+        /* animation-timing-function: ease-in-out; */
+
+        #guy-left-lower-arm-group {
+            animation-name: walk-left-lower-arm-group;
+            /* animation-timing-function: ease-in-out; */
+
+            #guy-left-hand {
+                animation-name: walk-left-hand;
+            }
+        }
+    }
+
+    #guy-right-arm {
+        animation-name: walk-right-arm;
+
+        #guy-right-lower-arm-group {
+            animation-name: walk-right-lower-arm-group;
+
+            #guy-right-hand {
+                animation-name: walk-right-hand;
+            }
+        }
+    }
+
+    #guy-left-leg {
+        animation-name: walk-left-leg;
+
+        #guy-left-lower-leg-group {
+            animation-name: walk-left-lower-leg-group;
+
+            #guy-left-shoe {
+                animation-name: walk-left-shoe;
+            }
+        }
+    }
+
+    #guy-right-leg {
+        animation-name: walk-right-leg;
+
+        #guy-right-lower-leg-group {
+            animation-name: walk-right-lower-leg-group;
+
+            #guy-right-shoe {
+                animation-name: walk-right-shoe;
+            }
+        }
+    }
+}
+
+    @keyframes walk-all {
+        0% { transform: translateX(280%) translateY(0) rotate(0deg); }
+        30% { transform: translateX(150%) translateY(5%) rotate(-12deg); }
+        50% { transform: translateX(100%) translateY(0) rotate(0deg); }
+        75% { transform: translateX(35%) translateY(5%) rotate(-12deg); }
+        100% { transform: translateX(0%) translateY(0) rotate(0deg); }
+    }
+  
+    @keyframes walk-upper-body {
+        0% { transform: rotate(0deg); }
+    
+    }
+  
+    @keyframes walk-head {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(12deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(12deg); }
+        100% { transform: rotate(0deg); }
+    }
+  
+    @keyframes walk-left-arm {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(-35deg); }
+        /* 50% { transform: rotate(0deg); } */
+        75% { transform: rotate(35deg); }
+        100% { transform: rotate(0deg); }
+    }
+  
+    @keyframes walk-left-lower-arm-group {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(90deg); }
+        75% { transform: rotate(60deg); }
+        100% { transform: rotate(0deg); }
+    }
+  
+    @keyframes walk-right-arm {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(35deg); }
+        /* 50% { transform: rotate(0deg); } */
+        75% { transform: rotate(-35deg); }
+        100% { transform: rotate(0deg); }
+    }
+  
+    @keyframes walk-right-lower-arm-group {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(35deg); }
+        75% { transform: rotate(35deg); }
+        100% { transform: rotate(0deg); }
+    }
+  
+    @keyframes walk-left-leg {
+        0% { transform: rotate(10deg); }
+        30% { transform: rotate(20deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(-20deg); }
+        100% { transform: rotate(0deg); }
+    }
+  
+    @keyframes walk-left-lower-leg-group {
+        0% { transform: rotate(-40deg); }
+        30% { transform: rotate(40deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(40deg); }
+        88% { transform: rotate(-10deg); }
+        100% { transform: rotate(0deg); }
+    }
+
+    @keyframes walk-right-leg {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(-10deg); }
+        50% { transform: rotate(10deg); }
+        75% { transform: rotate(30deg); }
+        100% { transform: rotate(0deg); }
+    }
+  
+    @keyframes walk-right-lower-leg-group {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(-10deg); }
+        50% { transform: rotate(-40deg); }
+        75% { transform: rotate(20deg); }
+        100% { transform: rotate(0deg); }
+    }
+
+    @keyframes walk-left-shoe {
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(-40deg); }
+    }
+
+    @keyframes walk-right-shoe {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(-20deg); }
+        50% { transform: rotate(10deg); }
+    }
